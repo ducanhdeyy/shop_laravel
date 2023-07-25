@@ -64,7 +64,7 @@ Route::prefix('shop')->group(function () {
     Route::get('/{category_name}', [ShopController::class, 'category'])->name('categoryName');
     Route::get('/color/{color_name}', [ShopController::class, 'colors'])->name('colorName');
 });
-
+Route::get('/product/detail/{id}', [ProductDetailController::class, 'index'])->name('product_detail');
 
 // Hiện thị giỏ hàng
 Route::prefix('cart')->group(function () {
