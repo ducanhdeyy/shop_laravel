@@ -75,13 +75,11 @@
                                             <a class="primary_img" href="{{route('product_detail', $product->id)}}"><img src="{{$product->path_image}}" alt=""></a>
                                             @foreach($product->productImages as $proImage)
                                             <a class="secondary_img" href="{{route('product_detail', $product->id)}}"><img src="{{$proImage->path_image}}" alt=""></a>
-                                                @break(false)
+                                            @break(false)
                                             @endforeach
                                             <div class="quick_button">
                                                 <a href="{{route('product_detail', $product->id)}}" title="quick_view">View products</a>
-
                                             </div>
-
                                             <div class="product_sale">
                                                 @if($product->sale_price != null && number_format($product->sale_price / $product->price * 100) > 0)
                                                 <span>{{number_format($product->sale_price / $product->price * 100) }}%</span>
@@ -213,7 +211,7 @@
                                 <div class="author_name">
                                     <p>
                                         <span class="post_by">by</span>
-                                        <span class="themes">Căn Đinh</span> / {{ date('M d ,Y ', strtotime($blog->created_at)) }}
+                                        <span class="themes">Đức Anh</span> / {{ date('M d ,Y ', strtotime($blog->created_at)) }}
                                     </p>
 
                                 </div>

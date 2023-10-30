@@ -21,6 +21,7 @@ use App\Http\Controllers\Client\ContactController as ClientContactController;
 use App\Http\Controllers\Client\HomeController;
 use App\Http\Controllers\Client\OrderDetailController;
 use App\Http\Controllers\Client\BlogController as ClientBlogController;
+use App\Http\Controllers\Client\ProductDetailController;
 use App\Http\Controllers\Client\ShopController;
 use App\Http\Controllers\LoginContrller;
 use Illuminate\Support\Facades\Route;
@@ -80,15 +81,14 @@ Route::prefix('cart')->group(function () {
 Route::prefix('checkout')->group(function () {
     Route::get('/', [CheckOutController::class, 'index'])->name('product_cart_checkout');
     Route::post('/', [CheckOutController::class, 'addOrder'])->name('addOrder');
-    Route::get('/vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
+    Route::post('/vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
 });
 
 
 Route::prefix('client')->group(function () {
-    Route::get('/login', [ClientLoginController::class, 'index'])->name('client_login');
+    Route::get('/loginn', [ClientLoginController::class, 'index'])->name('client_login');
     Route::post('/login/check', [ClientLoginController::class, 'login'])->name('client_check_login');
     Route::get('/logout', [ClientLoginController::class, 'logout'])->name('client_check_logout');
-
     Route::post('/register', [ClientLoginController::class, 'register'])->name('client_register');
 });
 

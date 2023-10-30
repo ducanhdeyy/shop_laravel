@@ -80,7 +80,6 @@ define('BASE_URL', "http://127.0.0.1:8000/");
                                                         <span>{{$color->products->count()}}</span></a></li>
                                             @endif
                                         @endforeach
-
                                     </ul>
                                 </div>
                                 <div class="widget_list tag-cloud">
@@ -232,5 +231,7 @@ define('BASE_URL', "http://127.0.0.1:8000/");
                 $('.select_option').submit();
             });
         });
+
+
     </script>
 @endsection

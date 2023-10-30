@@ -25,7 +25,6 @@ class Decentralization
         if ($user->can($route)){
             return $next($request);
         }
-
         return abort(403);
     }
 }

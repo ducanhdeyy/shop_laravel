@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Http\Requests\LoginRequest;
 use App\Http\Requests\UserAddRequest;
 use App\Models\User;
+use Gloudemans\Shoppingcart\Facades\Cart;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Laravel\Socialite\Facades\Socialite;
@@ -116,18 +117,7 @@ class LoginContrller extends Controller
     {
 
         Auth::logout();
-
+        Cart::destroy();
         return redirect()->route('login');
     }
-
-//     chuyển đổi ngôn ngữ
-
-    public function loginGoogle()
-    {
-        $lang = new GoogleTranslate('en');
-        return $lang->setSource('en')->setTarget('en')->translate("hello Word");
-    }
-
-
-
 }

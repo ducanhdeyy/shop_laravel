@@ -20,12 +20,11 @@
     </div>
 
     <div class="checkout-section spad">
-
         <div class="container">
             <x-alert/>
             <form action="{{route('addOrder')}}" method="post" class="checkout-form">
                 @csrf
-                <input type="hidden" name="customer_id" value="{{$customer->id}}">
+                <input type="hidden" name="customer_id" value="{{ $customer->id}}">
                 <input type="hidden" name="status" value="1">
                 <input type="hidden" name="total" value="{{$total}}">
                 <div class="row">
@@ -40,7 +39,7 @@
                                         id="fir"
                                         class="@error('name') is-invalid @enderror"
                                         name="name"
-                                        value="{{$customer->name}}"
+                                        value="{{ $customer->name}}"
                                     >
                                 </div>
 
@@ -51,7 +50,7 @@
                                            id="email"
                                            class="@error('email') is-invalid @enderror"
                                            name="email"
-                                           value="{{$customer->email}}"
+                                           value="{{ $customer->email}}"
                                     >
                                 </div>
                                 <div class="col-lg-6">
@@ -60,7 +59,7 @@
                                            id="phone"
                                            class="@error('phone') is-invalid @enderror"
                                            name="phone"
-                                           value="{{$customer->phone}}"
+                                           value="{{ $customer->phone}}"
                                     >
                                 </div>
                                 <div class="col-lg-12">
@@ -68,7 +67,7 @@
                                     <input type="text"
                                            class="@error('address') is-invalid @enderror"
                                            name="address"
-                                           value="{{$customer->address}}"
+                                           value="{{ $customer->address}}"
                                     >
                                 </div>
 

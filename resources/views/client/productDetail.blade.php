@@ -49,7 +49,6 @@ define('BASE_URL', "http://127.0.0.1:8000/");
                                            data-zoom-image="{{BASE_URL.$image->path_image}}">
                                             <img src="{{BASE_URL.$image->path_image}}" alt="zo-th-1"/>
                                         </a>
-
                                     </li>
                                 @endforeach
                             </ul>
@@ -88,7 +87,7 @@ define('BASE_URL', "http://127.0.0.1:8000/");
                             <div class="product_variant color">
                                 <h3>color</h3>
                                 <select class="niceselect_option form-control" id="color" name="color">
-                                    @foreach($product->productColors  as $color)
+                                    @foreach($product->productColors as $color)
                                         <option value="{{$color->id}}">{{$color->name}}</option>
                                     @endforeach
                                 </select>
@@ -218,26 +217,7 @@ define('BASE_URL', "http://127.0.0.1:8000/");
                                                 <input id="email" name="email" type="text">
                                             </div>
                                         </div>
-{{--                                        <div class="personal-rating">--}}
-{{--                                            <h6>Your Rating</h6>--}}
-{{--                                            <div class="rate">--}}
-{{--                                                <input type="radio" id="star5" class="rating"--}}
-{{--                                                       value="5"/>--}}
-{{--                                                <label for="star5" title="text">5 stars</label>--}}
-{{--                                                <input type="radio" id="star4" class="rating"--}}
-{{--                                                       value="4"/>--}}
-{{--                                                <label for="star4" title="text">4 stars</label>--}}
-{{--                                                <input type="radio" id="star3" class="rating"--}}
-{{--                                                       value="3"/>--}}
-{{--                                                <label for="star3" title="text">3 stars</label>--}}
-{{--                                                <input type="radio" id="star2" class="rating"--}}
-{{--                                                       value="2"/>--}}
-{{--                                                <label for="star2" title="text">2 stars</label>--}}
-{{--                                                <input type="radio" id="star1" class="rating"--}}
-{{--                                                       value="1"/>--}}
-{{--                                                <label for="star1" title="text" class="rating">1 star</label>--}}
-{{--                                            </div>--}}
-{{--                                        </div>--}}
+
                                         <button type="submit" id="btn-comment">Submit</button>
                                     </form>
                                 </div>
