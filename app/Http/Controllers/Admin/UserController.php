@@ -120,6 +120,7 @@ class UserController extends Controller
             return redirect()->back()->with('success', 'Xóa Thành Công');
         }
     }
+    
 
 
 }

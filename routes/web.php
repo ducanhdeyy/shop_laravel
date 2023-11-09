@@ -52,9 +52,11 @@ Route::middleware('auth')->group(function () {
         Route::resource('admin/contact', ContactController::class);
         Route::resource('role', RoleController::class);
         Route::resource('permission', PermissionController::class);
-
     });
 });
+
+//export data_excel
+Route::get('/export_order_excel',[OrderController::class,'export_order'])->name('export_order');
 
 // Hiển thị giao diện
 
@@ -81,7 +83,7 @@ Route::prefix('cart')->group(function () {
 Route::prefix('checkout')->group(function () {
     Route::get('/', [CheckOutController::class, 'index'])->name('product_cart_checkout');
     Route::post('/', [CheckOutController::class, 'addOrder'])->name('addOrder');
-    Route::post('/vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
+    Route::get('/vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
 });
 
 
