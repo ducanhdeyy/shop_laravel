@@ -33,11 +33,11 @@
     @foreach($order->orderDetails as $orderDetail)
     <tr>
             <th scope="row">{{$orderDetail->product->name}}</th>
-            <td>{{$orderDetail->quantity}}</td>
-            <td>{{$orderDetail->color}}</td>
-            <td>{{$orderDetail->size}}</td>
-            <td>{{number_format($orderDetail->price)}} Đ</td>
-            <td>{{number_format($orderDetail->total)}} Đ</td>
+            <td scope="col">{{$orderDetail->quantity}}</td>
+            <td scope="col">{{$orderDetail->color}}</td>
+            <td scope="col">{{$orderDetail->size}}</td>
+            <td scope="col">{{number_format($orderDetail->price)}} VND</td>
+            <td scope="col">{{number_format($orderDetail->total)}} VND</td>
             {{--           Tính tông giá đơn hàng--}}
                 <?php $totalOrder += $orderDetail->total ?>
     </tr>
@@ -45,9 +45,9 @@
     </tbody>
 </table>
 <div style="border: 1px solid; width: 250px;margin-top: 20px;padding: 0 20px">
-    <h4>shipping fee : 30,000 Đ</h4>
+    <h4>Shipping Fee : 30,000 VND</h4>
     <h4>Date : {{date('M d Y', strtotime($order->created_at))}}</h4>
-    <h4>Total Order : {{number_format($totalOrder)}} Đ</h4>
+    <h4>Total Order : {{number_format($totalOrder)}} VND</h4>
 </div>
 
 <div style="text-align: center">

@@ -228,7 +228,7 @@
 
                                 <div class="btn-actions-pane-right">
                                     <div role="group" class="btn-group-sm btn-group">
-                                        <a href="{{route('export_order')}}"><button class="btn btn-actions-pane-right">Export data-excel</button></a>
+                                        <a href="{{route('export_order')}}"><button class="btn btn-gradient-alternate mx-2">Export data-excel</button></a>
                                     </div>
                                 </div>
                             </div>

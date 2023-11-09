@@ -32,8 +32,8 @@
                 <td class="text-center">{{$orderDetail->quantity}}</td>
                 <td class="text-center">{{$orderDetail->color}}</td>
                 <td class="text-center">{{$orderDetail->size}}</td>
-                <td class="text-center"> {{number_format($orderDetail->price) }} Đ</td>
-                <td class="text-center">{{number_format($orderDetail->total)}} Đ</td>
+                <td class="text-center"> {{number_format($orderDetail->price) }} VNĐ</td>
+                <td class="text-center">{{number_format($orderDetail->total)}} VNĐ</td>
                 <td>  @can($model.'.edit')
                         <a href="{{route($model.'.edit', $order->id)}}" data-toggle="tooltip" title="Edit"
                            data-placement="bottom" class="btn btn-outline-warning border-0 btn-sm">
@@ -49,12 +49,13 @@
         @endforeach
         <tr>
             <td style="height: 100px" colspan="3"><strong>Total Order :</strong></td>
-            <td colspan="3"><strong>{{number_format($totalOrder)}} Đ</strong></td>
+            <td colspan="3"><strong>{{number_format($totalOrder)}} VNĐ</strong></td>
             <td><a href="{{route($model.'.index')}}"
                    class="btn btn-hover-shine btn-outline-primary border-0 btn-sm">
                     Back
                 </a>
             </td>
+            <a href="{{route($model.'.inPdf',$order->id)}}"><button class="btn btn-gradient-light m-2">Downloads PDF bill</button></a>
         </tr>
         </tbody>
 

@@ -52,6 +52,8 @@ Route::middleware('auth')->group(function () {
         Route::resource('admin/contact', ContactController::class);
         Route::resource('role', RoleController::class);
         Route::resource('permission', PermissionController::class);
+
+        Route::get('/export_order_excel',[OrderController::class,'export_order'])->name('export_order');
     });
 });
 
@@ -85,8 +87,7 @@ Route::prefix('checkout')->group(function () {
     Route::post('/', [CheckOutController::class, 'addOrder'])->name('addOrder');
     Route::get('/vnPayCheck', [CheckOutController::class, 'vnPayCheck']);
 });
-
-
+Route::get('orderPdf/{checkout_code}', [OrderController::class, 'print_order'])->name('order.inPdf');
 Route::prefix('client')->group(function () {
     Route::get('/loginn', [ClientLoginController::class, 'index'])->name('client_login');
     Route::post('/login/check', [ClientLoginController::class, 'login'])->name('client_check_login');
